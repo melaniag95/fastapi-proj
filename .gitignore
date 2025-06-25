@@ -1,0 +1,40 @@
+# Ambiente virtuale
+venv/
+.env
+
+# Cache di Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# File temporanei
+*.log
+*.sqlite3
+*.db
+*.tmp
+*.bak
+
+# File di sistema Mac
+.DS_Store
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+
+# Docker (se usi Docker)
+*.env
+.env.*
+docker-compose.override.yml
+
+# Test coverage
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+pytest_cache/
+
+# Jupyter (se mai lo usassi)
+.ipynb_checkpoints/
