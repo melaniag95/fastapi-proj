@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { fetchData } from "./api";
 import FilterInput from "./components/FilterInput";
 import Button from "./components/Button";
 import DataTable from "./components/DataTable";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+
 
 function App() {
+  const { t } = useTranslation();
+
   const [data, setData] = useState([]);
   const [anno, setAnno] = useState("");
   const [regione, setRegione] = useState("");
 
-
   const columns = [
-    { key: "Anno", label: "Anno" },
-    { key: "Regione", label: "Regione" },
-    { key: "Percentuale", label: "Percentuale (%)" },
+    { key: "Anno", label: t("year")},
+    { key: "Regione", label: t("region")},
+    { key: "Percentuale", label: t("percentage") },
   ];
 
 
@@ -28,24 +32,25 @@ function App() {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>Dati sovraffollamento abitativo 2004 - 2011</h1>
+      <LanguageSwitcher />
+      <h1>{t("title")}</h1>
       <div style={{ marginBottom: "1rem" }}>
         <FilterInput
-          label="Anno"
+          label={t("year")}
           type="number"
           value={anno}
           onChange={(e) => setAnno(e.target.value)}
-          placeholder="Inserisci anno"
+          placeholder={t("placeholder_year")}
         />
         <FilterInput
-          label="Regione"
+          label={t("region")}
           value={regione}
           onChange={(e) => setRegione(e.target.value)}
-          placeholder="Inserisci regione"
+          placeholder={t("placeholder_region")}
         />
         <Button
           onClick={handleFilter}
-          label="Filtra"
+          label={t("filter")}
         />
       </div>
       <DataTable data={data} columns={columns} />

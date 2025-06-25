@@ -1,0 +1,9 @@
+{
+  "title": "Overcrowding Data 2004 - 2011",
+  "year": "Year",
+  "region": "Region",
+  "percentage": "Percentage (%)",
+  "filter": "Filter",
+  "placeholder_year": "Enter year",
+  "placeholder_region": "Enter region"
+}

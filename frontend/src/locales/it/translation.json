@@ -1,0 +1,9 @@
+{
+  "title": "Dati sovraffollamento abitativo 2004 - 2011",
+  "year": "Anno",
+  "region": "Regione",
+  "percentage": "Percentuale (%)",
+  "filter": "Filtra",
+  "placeholder_year": "Inserisci anno",
+  "placeholder_region": "Inserisci regione"
+}
