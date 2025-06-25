@@ -5,5 +5,11 @@
   "percentage": "Percentuale (%)",
   "filter": "Filtra",
   "placeholder_year": "Inserisci anno",
-  "placeholder_region": "Inserisci regione"
+  "placeholder_region": "Inserisci regione",
+  "sort_by": "Ordina per",
+  "order": "Ordine",
+  "ascending": "Ascendente",
+  "descending": "Discendente",
+  "none": "-- Nessuno --",
+  "reset": "Reimposta filtri"
 }
