@@ -11,7 +11,7 @@ def get_data(
     year: Optional[int] = None,
     region: Optional[str] = None,
     sort_by: Optional[str] = Query(None, description="Field to sort by (Anno, Regione, Percentuale)"),
-    sort_order: Optional[str] = Query("asc", description="Sort order: 'asc' or 'desc'")
+    sort_order: Optional[str] = Query(None, description="Sort order: 'asc' or 'desc'")
 ):
     results = data
     if year:
