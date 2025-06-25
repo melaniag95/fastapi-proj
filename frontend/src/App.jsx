@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { fetchData } from "./api";
 import FilterInput from "./components/FilterInput";
+import SortControls from "./components/SortControls";
 import Button from "./components/Button";
 import DataTable from "./components/DataTable";
 import LanguageSwitcher from "./components/LanguageSwitcher";
@@ -13,6 +14,9 @@ function App() {
   const [data, setData] = useState([]);
   const [anno, setAnno] = useState("");
   const [regione, setRegione] = useState("");
+  const [sortBy, setSortBy] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+
 
   const columns = [
     { key: "Anno", label: t("year")},
@@ -26,8 +30,17 @@ function App() {
   }, []);
 
   const handleFilter = async () => {
-    const filtered = await fetchData(anno, regione);
+    const filtered = await fetchData(anno, regione, sortBy, sortOrder);
     setData(filtered);
+  };
+
+  const handleReset = async () => {
+    setAnno("");
+    setRegione("");
+    setSortBy("");
+    setSortOrder("asc");
+    const allData = await fetchData();
+    setData(allData);
   };
 
   return (
@@ -48,9 +61,23 @@ function App() {
           onChange={(e) => setRegione(e.target.value)}
           placeholder={t("placeholder_region")}
         />
+        <SortControls
+          sortBy={sortBy}
+          sortOrder={sortOrder}
+          onSortByChange={setSortBy}
+          onSortOrderChange={setSortOrder}
+        />
+      </div>
+      <div style={{ marginBottom: "1rem" }}>
         <Button
           onClick={handleFilter}
           label={t("filter")}
+        />
+      </div>
+      <div style={{ marginBottom: "1rem" }}>
+        <Button
+          onClick={handleReset}
+          label={t("reset")}
         />
       </div>
       <DataTable data={data} columns={columns} />
