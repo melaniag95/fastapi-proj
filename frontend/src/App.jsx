@@ -57,84 +57,86 @@ function App() {
       <Region name="header">
         <LanguageSwitcher />
       </Region>
-      <Region name="content">
-        <h1>{t("title")}</h1>
-        <div className="app__form">
-          <div className="app__form-row">
-            <div className="app__filters">
-              <div className="app__filters-row flex-container">
-                <FilterInput
-                  label={t("year")}
-                  type="number"
-                  value={anno}
-                  onChange={(e) => setAnno(e.target.value)}
-                  placeholder={t("placeholder_year")}
-                />
-                <FilterInput
-                  label={t("region")}
-                  value={regione}
-                  onChange={(e) => setRegione(e.target.value)}
-                  placeholder={t("placeholder_region")}
-                />
-              </div>
-            </div>
-            <div className="app__sort-controls">
-                <div className="app__sort-controls-row flex-container">
-                  <SortControls
-                    sortBy={sortBy}
-                    sortOrder={sortOrder}
-                    onSortByChange={setSortBy}
-                    onSortOrderChange={setSortOrder}
+      <main role="main">
+        <Region name="content">
+          <h1>{t("title")}</h1>
+          <div className="app__form">
+            <div className="app__form-row">
+              <div className="app__filters">
+                <div className="app__filters-row flex-container">
+                  <FilterInput
+                    label={t("year")}
+                    type="number"
+                    value={anno}
+                    onChange={(e) => setAnno(e.target.value)}
+                    placeholder={t("placeholder_year")}
+                  />
+                  <FilterInput
+                    label={t("region")}
+                    value={regione}
+                    onChange={(e) => setRegione(e.target.value)}
+                    placeholder={t("placeholder_region")}
                   />
                 </div>
-            </div>
-            <div className="app__actions">
-              <div className="app__actions-row flex-container justify-end">
-                <Button
-                  onClick={handleFilter}
-                  label={t("filter")}
-                  btnColor="primary"
-                />
-                <Button
-                  onClick={handleReset}
-                  label={t("reset")}
-                  btnColor="secondary"
-                />
+              </div>
+              <div className="app__sort-controls">
+                  <div className="app__sort-controls-row flex-container">
+                    <SortControls
+                      sortBy={sortBy}
+                      sortOrder={sortOrder}
+                      onSortByChange={setSortBy}
+                      onSortOrderChange={setSortOrder}
+                    />
+                  </div>
+              </div>
+              <div className="app__actions">
+                <div className="app__actions-row flex-container justify-end">
+                  <Button
+                    onClick={handleFilter}
+                    label={t("filter")}
+                    btnColor="primary"
+                  />
+                  <Button
+                    onClick={handleReset}
+                    label={t("reset")}
+                    btnColor="secondary"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="app__view-mode">
-          <div className="app__view-mode-row flex-container justify-center">
-            <Button
-              onClick={() => setViewMode("table")}
-              label={t("view_table")}
-              btnColor="light"
-              btnOutline={true}
-              icon={tableIcon}
-            />
+          <div className="app__view-mode">
+            <div className="app__view-mode-row flex-container justify-center">
+              <Button
+                onClick={() => setViewMode("table")}
+                label={t("view_table")}
+                btnColor="light"
+                btnOutline={true}
+                icon={tableIcon}
+              />
 
-            <Button
-              onClick={() => setViewMode("chart")}
-              label={t("view_chart")}
-              btnColor="light"
-              btnOutline={true}
-              icon={chartIcon}
-            />
-          </div>
-        </div>
-        {data && data.length > 0 && (
-          <div className="app__data">
-            <div className="app__data-row">
-              {viewMode === "table" ? (
-                <DataTable data={data} columns={columns} />
-              ) : (
-                <MultiLineChart data={data} />
-              )}
+              <Button
+                onClick={() => setViewMode("chart")}
+                label={t("view_chart")}
+                btnColor="light"
+                btnOutline={true}
+                icon={chartIcon}
+              />
             </div>
           </div>
-        )}
-      </Region>
+          {data && data.length > 0 && (
+            <div className="app__data">
+              <div className="app__data-row">
+                {viewMode === "table" ? (
+                  <DataTable data={data} columns={columns} />
+                ) : (
+                  <MultiLineChart data={data} />
+                )}
+              </div>
+            </div>
+          )}
+        </Region>
+      </main>
     </>
   );
 }

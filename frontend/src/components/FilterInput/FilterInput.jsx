@@ -8,6 +8,7 @@ function FilterInput({label, type = "text", value, onChange, placeholder = ""}) 
                 {label}
             </label>
             <input
+                id={label}
                 className={styles["text-input"]}
                 name={label}
                 type={type}

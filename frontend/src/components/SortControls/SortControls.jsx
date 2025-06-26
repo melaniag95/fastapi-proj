@@ -12,7 +12,7 @@ function SortControls({ sortBy, sortOrder, onSortByChange, onSortOrderChange }) 
           <label htmlFor={t('sort_by')}>
             {t('sort_by')}
           </label>
-          <select name={t('sort_by')} value={sortBy} onChange={(e) => onSortByChange(e.target.value)}>
+          <select id={t('sort_by')} name={t('sort_by')} value={sortBy} onChange={(e) => onSortByChange(e.target.value)}>
             <option value="">{t('none')}</option>
             <option value="Anno">{t('year')}</option>
             <option value="Regione">{t('region')}</option>
@@ -25,7 +25,7 @@ function SortControls({ sortBy, sortOrder, onSortByChange, onSortOrderChange }) 
         <label htmlFor={t('order')}>
             {t('order')}
         </label>
-        <select name={t('order')} value={sortOrder} onChange={(e) => onSortOrderChange(e.target.value)}>
+        <select id={t('order')} name={t('order')} value={sortOrder} onChange={(e) => onSortOrderChange(e.target.value)}>
           <option value="asc">{t('ascending')}</option>
           <option value="desc">{t('descending')}</option>
         </select>
