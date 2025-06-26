@@ -16,5 +16,7 @@
   "view_chart": "Grafico",
   "filter_region": "Filtra per regione",
   "switch_to_it": "Passa a Italiano",
-  "switch_to_en": "Passa a Inglese"
+  "switch_to_en": "Passa a Inglese",
+  "lang_it": "Italiano",
+  "lang_en": "Inglese"
 }
