@@ -3,10 +3,12 @@ import React from "react";
 function FilterInput({label, type = "text", value, onChange, placeholder = ""}) {
     return (
         <div style={{ margin: "0.5rem 0" }}>
-            <label>
+            <label
+                htmlFor={label}>
                 {label}
             </label>
             <input
+                name={label}
                 type={type}
                 value={value}
                 onChange={onChange}

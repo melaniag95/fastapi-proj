@@ -6,20 +6,20 @@ function SortControls({ sortBy, sortOrder, onSortByChange, onSortOrderChange }) 
 
   return (
     <div style={{ marginBottom: '1rem' }}>
-        <label>
+        <label htmlFor={t('sort_by')}>
             {t('sort_by')}
         </label>
-        <select value={sortBy} onChange={(e) => onSortByChange(e.target.value)}>
+        <select name={t('sort_by')} value={sortBy} onChange={(e) => onSortByChange(e.target.value)}>
           <option value="">{t('none')}</option>
           <option value="Anno">{t('year')}</option>
           <option value="Regione">{t('region')}</option>
           <option value="Percentuale">{t('percentage')}</option>
         </select>
     
-        <label>
+        <label htmlFor={t('order')}>
             {t('order')}
         </label>
-        <select value={sortOrder} onChange={(e) => onSortOrderChange(e.target.value)}>
+        <select name={t('order')} value={sortOrder} onChange={(e) => onSortOrderChange(e.target.value)}>
           <option value="asc">{t('ascending')}</option>
           <option value="desc">{t('descending')}</option>
         </select>
