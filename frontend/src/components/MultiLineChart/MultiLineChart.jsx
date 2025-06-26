@@ -26,7 +26,6 @@ function MultiLineChart({ data }) {
         yearData[item.Regione] = item.Percentuale;
       }
     });
-    console.log(yearData);
     return yearData;
   });
 

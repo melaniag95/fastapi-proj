@@ -1,13 +1,14 @@
-import React from "react";
+import styles from "./FilterInput.module.css";
 
 function FilterInput({label, type = "text", value, onChange, placeholder = ""}) {
     return (
-        <div style={{ margin: "0.5rem 0" }}>
+        <div className={styles.formGroup}>
             <label
                 htmlFor={label}>
                 {label}
             </label>
             <input
+                className={styles["text-input"]}
                 name={label}
                 type={type}
                 value={value}
