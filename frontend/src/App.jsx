@@ -5,6 +5,7 @@ import FilterInput from "./components/FilterInput";
 import SortControls from "./components/SortControls";
 import Button from "./components/Button";
 import DataTable from "./components/DataTable";
+import MultiLineChart from "./components/MultiLineChart";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 
 
@@ -16,6 +17,7 @@ function App() {
   const [regione, setRegione] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
+  const [viewMode, setViewMode] = useState("table");
 
 
   const columns = [
@@ -80,7 +82,19 @@ function App() {
           label={t("reset")}
         />
       </div>
-      <DataTable data={data} columns={columns} />
+      <div style={{ marginBottom: "1rem" }}>
+        <button onClick={() => setViewMode("table")} aria-label={t("view_table")}>
+          {t("view_table")}
+        </button>
+        <button onClick={() => setViewMode("chart")} aria-label={t("view_chart")}>
+          {t("view_chart")}
+        </button>
+      </div>
+      {viewMode === "table" ? (
+        <DataTable data={data} columns={columns} />
+      ) : (
+        <MultiLineChart data={data} />
+      )}
     </div>
   );
 }
