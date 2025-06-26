@@ -11,5 +11,10 @@
   "ascending": "Ascending",
   "descending": "Descending",
   "none": "-- None --",
-  "reset": "Reset Filters"
+  "reset": "Reset Filters",
+  "view_table": "Table",
+  "view_chart": "Chart",
+  "filter_region": "Filter by Region",
+  "switch_to_it": "Switch to Italian",
+  "switch_to_en": "Switch to English"
 }

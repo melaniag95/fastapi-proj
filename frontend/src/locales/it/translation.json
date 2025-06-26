@@ -11,5 +11,10 @@
   "ascending": "Ascendente",
   "descending": "Discendente",
   "none": "-- Nessuno --",
-  "reset": "Reimposta filtri"
+  "reset": "Reimposta filtri",
+  "view_table": "Tabella",
+  "view_chart": "Grafico",
+  "filter_region": "Filtra per regione",
+  "switch_to_it": "Passa a Italiano",
+  "switch_to_en": "Passa a Inglese"
 }
