@@ -9,6 +9,8 @@ import Button from "./components/Button/Button";
 import DataTable from "./components/DataTable/DataTable";
 import MultiLineChart from "./components/MultiLineChart/MultiLineChart";
 import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTable, faChartLine } from '@fortawesome/free-solid-svg-icons'
 
 
 function App() {
@@ -27,6 +29,9 @@ function App() {
     { key: "Regione", label: t("region")},
     { key: "Percentuale", label: t("percentage") },
   ];
+
+  const tableIcon = <FontAwesomeIcon icon={faTable} className={styles.icon} />;
+  const chartIcon = <FontAwesomeIcon icon={faChartLine} className={styles.icon} />;
 
 
   useEffect(() => {
@@ -106,6 +111,7 @@ function App() {
               label={t("view_table")}
               btnColor="light"
               btnOutline={true}
+              icon={tableIcon}
             />
 
             <Button
@@ -113,6 +119,7 @@ function App() {
               label={t("view_chart")}
               btnColor="light"
               btnOutline={true}
+              icon={chartIcon}
             />
           </div>
         </div>

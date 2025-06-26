@@ -2,6 +2,7 @@ import styles from "./LanguageSwitcher.module.css";
 import Button from "../Button/Button";
 import { useTranslation } from 'react-i18next';
 
+
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const { t } = useTranslation();
