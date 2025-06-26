@@ -25,7 +25,6 @@ __pycache__/
 
 # Docker (se usi Docker)
 *.env
-.env.*
 docker-compose.override.yml
 
 # Test coverage
